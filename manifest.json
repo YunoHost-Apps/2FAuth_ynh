@@ -1,0 +1,48 @@
+{
+    "name": "2FAuth",
+    "id": "2fauth",
+    "packaging_format": 1,
+    "description": {
+        "en": "self-hosted alternative to One Time Passcode",
+        "fr": "self-hosted alternative to One Time Passcode"
+    },
+    "version": "2.1.0~ynh1",
+    "url": "https://github.com/Bubka/2FAuth",
+    "upstream": {
+        "license": "AGPL-3.0",
+        "website": "https://example.com",
+        "demo": "https://demo.2fauth.app/login",
+        "code": "https://github.com/Bubka/2FAuth"
+    },
+    "license": "AGPL-3.0",
+    "maintainer": {
+        "name": "",
+        "email": ""
+    },
+    "requirements": {
+        "yunohost": ">= 4.3.0"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "php7.3-fpm",
+        "mysql"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain"
+            },
+            {
+                "name": "admin",
+                "type": "user"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    }
+}
