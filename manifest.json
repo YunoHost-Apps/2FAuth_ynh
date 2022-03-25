@@ -10,7 +10,6 @@
     "url": "https://github.com/Bubka/2FAuth",
     "upstream": {
         "license": "AGPL-3.0",
-        "website": "https://example.com",
         "demo": "https://demo.2fauth.app/login",
         "code": "https://github.com/Bubka/2FAuth"
     },
