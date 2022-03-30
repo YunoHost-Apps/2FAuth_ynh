@@ -115,13 +115,21 @@ ynh_script_progression --message="Installing $app with Composer..." --weight=15
 ynh_install_composer #--install_args="--ignore-platform-reqs"
 
 #=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+# Setup application config
+ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
+
+chmod 400 "$final_path/.env"
+chown $app:$app "$final_path/.env"
+
+#=================================================
 # BUILDING
 #=================================================
 ynh_script_progression --message="Building..." --weight=10
 
-# Setup application config
-ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
- 
 # Setup application config
 pushd $final_path
 	php$phpversion artisan migrate:refresh -n
