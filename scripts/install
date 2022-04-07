@@ -136,7 +136,7 @@ pushd $final_path
 	php$phpversion artisan passport:install -n
 	php$phpversion artisan storage:link -n
 	php$phpversion artisan config:cache -n
-	php$phpversion artisan key:generate
+	php$phpversion artisan key:generate -n
 popd
 
 #=================================================
