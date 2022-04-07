@@ -108,7 +108,7 @@ ynh_script_progression --message="Configuring PHP-FPM..." --weight=2
 ynh_add_fpm_config
 
 #=================================================
-# INSTALL LYCHEE WITH COMPOSER
+# INSTALL 2FAUTH WITH COMPOSER
 #=================================================
 ynh_script_progression --message="Installing $app with Composer..." --weight=15
 
