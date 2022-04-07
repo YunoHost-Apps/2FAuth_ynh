@@ -116,11 +116,12 @@ ynh_script_progression --message="Building..." --weight=10
 
 # Setup application config
 pushd $final_path
-	php$phpversion artisan migrate:refresh -n
-	php$phpversion artisan passport:install -n
-	php$phpversion artisan storage:link -n
-	php$phpversion artisan config:cache -n
+	php$phpversion artisan migrate -n
+	#php$phpversion artisan passport:install -n
+	#php$phpversion artisan storage:link -n
+	php$phpversion artisan config:clear -n
 popd
+
 #=================================================
 # RELOAD NGINX
 #=================================================
