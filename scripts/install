@@ -128,7 +128,7 @@ chown $app:$app "$final_path/.env"
 #=================================================
 # BUILDING
 #=================================================
-ynh_script_progression --message="Building..." --weight=10
+ynh_script_progression --message="Building $app..." --weight=10
 
 # Setup application config
 pushd $final_path
