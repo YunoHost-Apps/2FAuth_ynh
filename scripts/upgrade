@@ -112,7 +112,7 @@ ynh_add_fpm_config
 #=================================================
 ynh_script_progression --message="Installing $app with Composer..." --weight=15
 
-ynh_install_composer
+ynh_install_composer --install_args="--prefer-dist --no-scripts --no-dev"
 
 #=================================================
 # BUILDING
@@ -121,10 +121,13 @@ ynh_script_progression --message="Building..." --weight=10
 
 # Setup application config
 pushd $final_path
+	php$phpversion artisan cache:clear
+	php$phpversion artisan config:clear
 	php$phpversion artisan migrate -n
-	#php$phpversion artisan passport:install -n
+	php$phpversion artisan passport:install -n
 	#php$phpversion artisan storage:link -n
-	php$phpversion artisan config:clear -n
+	php$phpversion artisan config:cache -n
+	php$phpversion artisan route:cache
 popd
 
 #=================================================
