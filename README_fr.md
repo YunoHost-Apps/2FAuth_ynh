@@ -33,6 +33,7 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 
 ## Documentations et ressources
 
+* Documentation officielle de l'admin : https://docs.2fauth.app/
 * Dépôt de code officiel de l'app : https://github.com/Bubka/2FAuth
 * Documentation YunoHost pour cette app : https://yunohost.org/app_2fauth
 * Signaler un bug : https://github.com/YunoHost-Apps/2fauth_ynh/issues
