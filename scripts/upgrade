@@ -121,7 +121,7 @@ ynh_script_progression --message="Building..." --weight=10
 
 # Setup application config
 pushd $final_path
-	php$phpversion artisan cache:clear
+	#php$phpversion artisan cache:clear
 	php$phpversion artisan config:clear
 	php$phpversion artisan migrate -n
 	php$phpversion artisan passport:install -n
