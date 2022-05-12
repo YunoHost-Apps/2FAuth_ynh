@@ -27,7 +27,7 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**Shipped version:** 2.1.0~ynh2
+**Shipped version:** 3.0.0~ynh1
 
 **Demo:** https://demo.2fauth.app/login
 
@@ -37,6 +37,7 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 
 ## Documentation and resources
 
+* Official admin documentation: https://docs.2fauth.app/
 * Upstream app code repository: https://github.com/Bubka/2FAuth
 * YunoHost documentation for this app: https://yunohost.org/app_2fauth
 * Report a bug: https://github.com/YunoHost-Apps/2fauth_ynh/issues

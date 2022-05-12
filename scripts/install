@@ -112,7 +112,7 @@ ynh_add_fpm_config
 #=================================================
 ynh_script_progression --message="Installing $app with Composer..." --weight=15
 
-ynh_install_composer #--install_args="--ignore-platform-reqs"
+ynh_install_composer --install_args="--prefer-dist --no-scripts --no-dev"
 
 #=================================================
 # ADD A CONFIGURATION
@@ -122,13 +122,13 @@ ynh_script_progression --message="Adding a configuration file..." --weight=1
 # Setup application config
 ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
 
-chmod 400 "$final_path/.env"
+chmod 644 "$final_path/.env"
 chown $app:$app "$final_path/.env"
 
 #=================================================
 # BUILDING
 #=================================================
-ynh_script_progression --message="Building..." --weight=10
+ynh_script_progression --message="Building $app..." --weight=10
 
 # Setup application config
 pushd $final_path
@@ -138,6 +138,10 @@ pushd $final_path
 	php$phpversion artisan config:cache -n
 	php$phpversion artisan key:generate -n
 popd
+
+chmod 775 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
 
 #=================================================
 # SETUP SSOWAT

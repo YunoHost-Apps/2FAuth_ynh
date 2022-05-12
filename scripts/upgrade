@@ -20,7 +20,7 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
-phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
+phpversion=$YNH_PHP_VERSION
 
 #=================================================
 # CHECK VERSION
@@ -105,14 +105,16 @@ ynh_add_nginx_config
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=1
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config
+ynh_add_fpm_config --phpversion=$phpversion
 
 #=================================================
 # INSTALL LYCHEE WITH COMPOSER
 #=================================================
 ynh_script_progression --message="Installing $app with Composer..." --weight=15
 
-ynh_install_composer
+#rm $final_path/package-lock.json
+
+ynh_install_composer --install_args="--prefer-dist --no-scripts --no-dev"
 
 #=================================================
 # BUILDING
@@ -121,10 +123,13 @@ ynh_script_progression --message="Building..." --weight=10
 
 # Setup application config
 pushd $final_path
+	#php$phpversion artisan cache:clear
+	#php$phpversion artisan config:clear
 	php$phpversion artisan migrate -n
-	#php$phpversion artisan passport:install -n
+	php$phpversion artisan passport:install -n
 	#php$phpversion artisan storage:link -n
-	php$phpversion artisan config:clear -n
+	php$phpversion artisan config:cache -n
+	php$phpversion artisan route:cache
 popd
 
 #=================================================
