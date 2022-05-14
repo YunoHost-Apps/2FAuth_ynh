@@ -6,7 +6,7 @@
         "en": "self-hosted alternative to One Time Passcode",
         "fr": "Alternative auto-hébergée a One Time Passcode"
     },
-    "version": "3.0.1~ynh1",
+    "version": "3.0.2~ynh1",
     "url": "https://github.com/Bubka/2FAuth",
     "upstream": {
         "license": "AGPL-3.0",
