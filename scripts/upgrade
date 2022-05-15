@@ -114,7 +114,7 @@ ynh_script_progression --message="Installing $app with Composer..." --weight=15
 
 #rm $final_path/package-lock.json
 
-ynh_install_composer --install_args="--prefer-dist --no-scripts --no-dev"
+ynh_install_composer --install_args="--ignore-platform-reqs --prefer-dist --no-scripts --no-dev"
 
 #=================================================
 # BUILDING
