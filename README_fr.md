@@ -23,7 +23,7 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**Version incluse :** 3.0.2~ynh1
+**Version incluse :** 3.0.2~ynh2
 
 **Démo :** https://demo.2fauth.app/login
 
