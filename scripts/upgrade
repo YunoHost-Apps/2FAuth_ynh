@@ -121,13 +121,14 @@ ynh_install_composer --install_args="--ignore-platform-reqs --prefer-dist --no-s
 #=================================================
 ynh_script_progression --message="Building..." --weight=10
 
+ynh_exec_warn_less ynh_composer_exec --commands="update"
+
 # Setup application config
 pushd $final_path
-	#php$phpversion artisan cache:clear
-	#php$phpversion artisan config:clear
+	php$phpversion artisan cache:clear
+	php$phpversion artisan config:clear
 	php$phpversion artisan migrate -n
 	php$phpversion artisan passport:install -n
-	#php$phpversion artisan storage:link -n
 	php$phpversion artisan config:cache -n
 	php$phpversion artisan route:cache
 popd
