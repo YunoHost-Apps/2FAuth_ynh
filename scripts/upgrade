@@ -20,7 +20,7 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
-phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
+phpversion=$YNH_PHP_VERSION
 
 #=================================================
 # CHECK VERSION
@@ -53,6 +53,11 @@ if ynh_legacy_permissions_exists; then
 	ynh_legacy_permissions_delete_all
 
 	ynh_app_setting_delete --app=$app --key=is_public
+fi
+
+# Create a permission if needed
+if ! ynh_permission_exists --permission="api"; then
+	ynh_permission_create --permission="api" --url="/api" --allowed="visitors" --show_tile="false" --protected="true"
 fi
 
 #=================================================
@@ -100,27 +105,34 @@ ynh_add_nginx_config
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=1
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config
+ynh_add_fpm_config --phpversion=$phpversion
 
 #=================================================
 # INSTALL LYCHEE WITH COMPOSER
 #=================================================
 ynh_script_progression --message="Installing $app with Composer..." --weight=15
 
-ynh_install_composer
+#rm $final_path/package-lock.json
+
+ynh_install_composer --install_args="--ignore-platform-reqs --prefer-dist --no-scripts --no-dev"
 
 #=================================================
 # BUILDING
 #=================================================
 ynh_script_progression --message="Building..." --weight=10
 
+ynh_exec_warn_less ynh_composer_exec --commands="update"
+
 # Setup application config
 pushd $final_path
-	php$phpversion artisan migrate:refresh -n
+	php$phpversion artisan cache:clear
+	php$phpversion artisan config:clear
+	php$phpversion artisan migrate -n
 	php$phpversion artisan passport:install -n
-	php$phpversion artisan storage:link -n
 	php$phpversion artisan config:cache -n
+	php$phpversion artisan route:cache
 popd
+
 #=================================================
 # RELOAD NGINX
 #=================================================
