@@ -27,7 +27,7 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**Shipped version:** 3.0.2~ynh1
+**Shipped version:** 3.0.2~ynh2
 
 **Demo:** https://demo.2fauth.app/login
 
@@ -35,6 +35,12 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 
 ![](./doc/screenshots/screenshot.png)
 
+## Disclaimers / important information
+
+2FAuth has been imagined for personal use only, it is single user designed.
+You have to create a user account to use the app and you cannot create more than one user account.
+
+Authentication documentation: https://docs.2fauth.app/security/authentication/
 ## Documentation and resources
 
 * Official admin documentation: https://docs.2fauth.app/
