@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # 2FAuth for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![Working status](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)  
 [![Install 2FAuth with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -27,13 +27,13 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**Shipped version:** 3.1.0~ynh1
+**Shipped version:** 3.1.1~ynh1
 
 **Demo:** https://demo.2fauth.app/login
 
 ## Screenshots
 
-![](./doc/screenshots/screenshot.png)
+![Screenshot of 2FAuth](./doc/screenshots/screenshot.png)
 
 ## Disclaimers / important information
 
@@ -43,20 +43,21 @@ You have to create a user account to use the app and you cannot create more than
 Authentication documentation: https://docs.2fauth.app/security/authentication/
 ## Documentation and resources
 
-* Official admin documentation: https://docs.2fauth.app/
-* Upstream app code repository: https://github.com/Bubka/2FAuth
-* YunoHost documentation for this app: https://yunohost.org/app_2fauth
-* Report a bug: https://github.com/YunoHost-Apps/2fauth_ynh/issues
+* Official admin documentation: <https://docs.2fauth.app/>
+* Upstream app code repository: <https://github.com/Bubka/2FAuth>
+* YunoHost documentation for this app: <https://yunohost.org/app_2fauth>
+* Report a bug: <https://github.com/YunoHost-Apps/2fauth_ynh/issues>
 
 ## Developer info
 
 Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing).
 
 To try the testing branch, please proceed like that.
-```
+
+``` bash
 sudo yunohost app install https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing --debug
 or
 sudo yunohost app upgrade 2fauth -u https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing --debug
 ```
 
-**More info regarding app packaging:** https://yunohost.org/packaging_apps
+**More info regarding app packaging:** <https://yunohost.org/packaging_apps>
