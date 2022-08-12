@@ -29,6 +29,7 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 
 **Shipped version:** 3.3.2~ynh1
 
+
 **Demo:** https://demo.2fauth.app/login
 
 ## Screenshots
