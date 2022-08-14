@@ -29,9 +29,10 @@ path_url="/"
 is_public=$YNH_APP_ARG_IS_PUBLIC
 phpversion=$YNH_PHP_VERSION
 admin=$YNH_APP_ARG_ADMIN
-email=$(ynh_user_get_info --username=$admin --key=mail)
 
 app=$YNH_APP_INSTANCE_NAME
+
+email=$(ynh_user_get_info --username=$admin --key=mail)
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
