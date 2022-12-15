@@ -35,6 +35,12 @@
                 "type": "domain"
             },
             {
+                "name": "path",
+                "type": "path",
+                "example": "/2fauth",
+                "default": "/2fauth"
+            },
+            {
                 "name": "admin",
                 "type": "user"
             },
