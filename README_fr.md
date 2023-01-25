@@ -5,15 +5,15 @@ It shall NOT be edited by hand.
 
 # 2FAuth pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
 [![Installer 2FAuth avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer 2FAuth rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer 2FAuth rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.
 
@@ -27,13 +27,13 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**Version incluse :** 3.4.1~ynh2
+**Version incluse :** 3.4.2~ynh1
 
 **Démo :** https://demo.2fauth.app/login
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de 2FAuth](./doc/screenshots/screenshot.png)
+![Capture d’écran de 2FAuth](./doc/screenshots/screenshot.png)
 
 ## Avertissements / informations importantes
 
@@ -43,8 +43,8 @@ You have to create a user account to use the app and you cannot create more than
 Authentication documentation: https://docs.2fauth.app/security/authentication/
 ## Documentations et ressources
 
-* Documentation officielle de l'admin : <https://docs.2fauth.app/>
-* Dépôt de code officiel de l'app : <https://github.com/Bubka/2FAuth>
+* Documentation officielle de l’admin : <https://docs.2fauth.app/>
+* Dépôt de code officiel de l’app : <https://github.com/Bubka/2FAuth>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_2fauth>
 * Signaler un bug : <https://github.com/YunoHost-Apps/2fauth_ynh/issues>
 
@@ -60,4 +60,4 @@ ou
 sudo yunohost app upgrade 2fauth -u https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
