@@ -1,5 +1,5 @@
-SOURCE_URL=https://github.com/Bubka/2FAuth/archive/refs/tags/v3.4.0.tar.gz
-SOURCE_SUM=3262de96b5a1525b6b51dc679d655dd602d0cd523b8901dfbb0e25dd844a069d
+SOURCE_URL=https://github.com/Bubka/2FAuth/archive/refs/tags/v3.4.1.tar.gz
+SOURCE_SUM=47228876cc431db310ccb6528af8481d1e36b013e78663566077b47d175e3f33
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
