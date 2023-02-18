@@ -38,6 +38,7 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 
 ## Documentation and resources
 
+* Official app website: <https://github.com/Bubka/2FAuth>
 * Official admin documentation: <https://docs.2fauth.app/>
 * Upstream app code repository: <https://github.com/Bubka/2FAuth>
 * YunoHost documentation for this app: <https://yunohost.org/app_2fauth>
