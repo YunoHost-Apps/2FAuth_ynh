@@ -6,4 +6,4 @@ test_format = 1.0
     # Commits to test upgrade from
     # -------------------------------
 
-    test_upgrade_from.f8832279.name = "Upgrade from #1"
+    test_upgrade_from.4a06f198.name = "Upgrade from #26"
