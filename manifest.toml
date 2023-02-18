@@ -14,7 +14,6 @@ license = "AGPL-3.0"
 demo = "https://demo.2fauth.app/login"
 admindoc = "https://docs.2fauth.app/"
 code = "https://github.com/Bubka/2FAuth"
-website = "https://github.com/Bubka/2FAuth"
 
 [integration]
 yunohost = ">= 11.1.7"
