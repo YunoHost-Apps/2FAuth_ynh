@@ -36,12 +36,6 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 
 ![Capture d’écran de 2FAuth](./doc/screenshots/screenshot.png)
 
-## Avertissements / informations importantes
-
-2FAuth has been imagined for personal use only, it is single user designed.
-You have to create a user account to use the app and you cannot create more than one user account.
-
-Authentication documentation: https://docs.2fauth.app/security/authentication/
 ## Documentations et ressources
 
 * Documentation officielle de l’admin : <https://docs.2fauth.app/>
