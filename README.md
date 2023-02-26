@@ -6,6 +6,7 @@ It shall NOT be edited by hand.
 # 2FAuth for YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![Working status](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
+
 [![Install 2FAuth with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -35,12 +36,6 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 
 ![Screenshot of 2FAuth](./doc/screenshots/screenshot.png)
 
-## Disclaimers / important information
-
-2FAuth has been imagined for personal use only, it is single user designed.
-You have to create a user account to use the app and you cannot create more than one user account.
-
-Authentication documentation: https://docs.2fauth.app/security/authentication/
 ## Documentation and resources
 
 * Official admin documentation: <https://docs.2fauth.app/>
