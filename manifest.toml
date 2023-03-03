@@ -16,7 +16,7 @@ admindoc = "https://docs.2fauth.app/"
 code = "https://github.com/Bubka/2FAuth"
 
 [integration]
-yunohost = ">= 11.1.10"
+yunohost = ">= 11.1.12"
 architectures = "all"
 multi_instance = true
 ldap = false
