@@ -20,7 +20,7 @@ yunohost = ">= 11.1.16"
 architectures = "all"
 multi_instance = true
 ldap = false
-sso = false
+sso = true
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
