@@ -16,7 +16,7 @@ admindoc = "https://docs.2fauth.app/"
 code = "https://github.com/Bubka/2FAuth"
 
 [integration]
-yunohost = ">= 11.1.13"
+yunohost = ">= 11.1.16"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -38,6 +38,14 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://github.com/Bubka/2FAuth/archive/refs/tags/v3.4.1.tar.gz"
+        sha256 = "47228876cc431db310ccb6528af8481d1e36b013e78663566077b47d175e3f33"
+        autoupdate.strategy = "latest_github_tag"
+
     [resources.system_user]
 
     [resources.install_dir]
