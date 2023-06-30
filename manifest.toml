@@ -54,7 +54,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "mariadb-server php8.1-bcmath php8.1-xml php8.1-mbstring php8.1-gd php8.1-mysql php8.1-curl"
+    packages = "mariadb-server php8.2-bcmath php8.2-xml php8.2-mbstring php8.2-gd php8.2-mysql php8.2-curl"
 
     [resources.database]
     type = "mysql"
