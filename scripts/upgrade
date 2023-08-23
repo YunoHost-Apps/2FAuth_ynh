@@ -68,6 +68,8 @@ ynh_add_nginx_config
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
+email=$(ynh_user_get_info --username=$admin --key=mail)
+
 # Setup application config
 ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
 
