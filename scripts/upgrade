@@ -47,7 +47,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=3
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep=".env storage"
+	ynh_setup_source --dest_dir="$install_dir" --keep="storage"
 fi
 
 chown -R $app:www-data "$install_dir"
@@ -62,6 +62,19 @@ ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
+
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+email=$(ynh_user_get_info --username=$admin --key=mail)
+
+# Setup application config
+ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
+
+chmod 644 "$install_dir/.env"
+chown $app:$app "$install_dir/.env"
 
 #=================================================
 # INSTALL 2FAUTH WITH COMPOSER
