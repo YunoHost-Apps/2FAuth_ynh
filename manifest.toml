@@ -5,7 +5,7 @@ name = "2FAuth"
 description.en = "self-hosted alternative to One Time Passcode"
 description.fr = "Alternative auto-hébergée a One Time Passcode"
 
-version = "4.1.0~ynh3"
+version = "4.1.0~ynh4"
 
 maintainers = ["eric_G"]
 
