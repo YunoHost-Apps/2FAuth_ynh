@@ -1,6 +1,5 @@
 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.
-
-It aims to ease you perform your 2FA authentication steps whatever the device you handle, with a clean and suitable interface.
+2FAuth aims to ease you perform your 2FA authentication steps whatever the device you handle, with a clean and suitable interface.
 
 ### Features
 
