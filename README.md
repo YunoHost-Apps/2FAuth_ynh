@@ -17,8 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 
 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.
-
-It aims to ease you perform your 2FA authentication steps whatever the device you handle, with a clean and suitable interface.
+2FAuth aims to ease you perform your 2FA authentication steps whatever the device you handle, with a clean and suitable interface.
 
 ### Features
 
@@ -28,7 +27,7 @@ It aims to ease you perform your 2FA authentication steps whatever the device yo
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**Shipped version:** 4.1.0~ynh4
+**Shipped version:** 4.2.0~ynh1
 
 **Demo:** https://demo.2fauth.app/login
 
