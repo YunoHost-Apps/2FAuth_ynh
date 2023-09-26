@@ -27,7 +27,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 - Modifier les comptes, même ceux importés
 - Générer des codes de sécurité TOTP et HOTP
 
-**Version incluse :** 4.2.1~ynh1
+**Version incluse :** 4.2.2~ynh1
 
 **Démo :** https://demo.2fauth.app/login
 
