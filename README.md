@@ -39,7 +39,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 * Official admin documentation: <https://docs.2fauth.app/>
 * Upstream app code repository: <https://github.com/Bubka/2FAuth>
-* YunoHost documentation for this app: <https://yunohost.org/app_2fauth>
+* YunoHost Store: <https://apps.yunohost.org/app/2fauth>
 * Report a bug: <https://github.com/YunoHost-Apps/2fauth_ynh/issues>
 
 ## Developer info
