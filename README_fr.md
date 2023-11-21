@@ -27,7 +27,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 - Modifier les comptes, même ceux importés
 - Générer des codes de sécurité TOTP et HOTP
 
-**Version incluse :** 4.2.3~ynh1
+**Version incluse :** 4.2.4~ynh1
 
 **Démo :** https://demo.2fauth.app/login
 
@@ -39,7 +39,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 * Documentation officielle de l’admin : <https://docs.2fauth.app/>
 * Dépôt de code officiel de l’app : <https://github.com/Bubka/2FAuth>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_2fauth>
+* YunoHost Store: <https://apps.yunohost.org/app/2fauth>
 * Signaler un bug : <https://github.com/YunoHost-Apps/2fauth_ynh/issues>
 
 ## Informations pour les développeurs
