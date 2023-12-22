@@ -50,6 +50,7 @@ then
 	ynh_setup_source --dest_dir="$install_dir" --keep="storage .env"
 fi
 
+chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
@@ -57,10 +58,8 @@ chown -R $app:www-data "$install_dir"
 #=================================================
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=1
 
-# Create a dedicated PHP-FPM config
-ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_footprint
+ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint
 
-# Create a dedicated NGINX config
 ynh_add_nginx_config
 
 #=================================================
@@ -71,7 +70,7 @@ ynh_add_nginx_config
 #email=$(ynh_user_get_info --username=$admin --key=mail)
 
 # Setup application config
-#ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
+#ynh_add_config --template=".env.example" --destination="$install_dir/.env"
 
 #chmod 644 "$install_dir/.env"
 #chown $app:$app "$install_dir/.env"
