@@ -26,10 +26,9 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 - Add custom account without QR code thanks to an advanced form
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
+**Shipped version:** 5.1.0~ynh1
 
-**Shipped version:** 5.0.4~ynh1
-
-**Demo:** https://demo.2fauth.app/login
+**Demo:** <https://demo.2fauth.app/login>
 
 ## Screenshots
 
@@ -37,10 +36,10 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Documentation and resources
 
-* Official admin documentation: <https://docs.2fauth.app/>
-* Upstream app code repository: <https://github.com/Bubka/2FAuth>
-* YunoHost Store: <https://apps.yunohost.org/app/2fauth>
-* Report a bug: <https://github.com/YunoHost-Apps/2fauth_ynh/issues>
+- Official admin documentation: <https://docs.2fauth.app/>
+- Upstream app code repository: <https://github.com/Bubka/2FAuth>
+- YunoHost Store: <https://apps.yunohost.org/app/2fauth>
+- Report a bug: <https://github.com/YunoHost-Apps/2fauth_ynh/issues>
 
 ## Developer info
 
@@ -48,7 +47,7 @@ Please send your pull request to the [testing branch](https://github.com/YunoHos
 
 To try the testing branch, please proceed like that.
 
-``` bash
+```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing --debug
 or
 sudo yunohost app upgrade 2fauth -u https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing --debug
