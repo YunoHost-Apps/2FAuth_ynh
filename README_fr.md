@@ -26,9 +26,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 - Ajoutez un compte personnalisé sans QR code grâce à un formulaire avancé
 - Modifier les comptes, même ceux importés
 - Générer des codes de sécurité TOTP et HOTP
-
 **Version incluse :** 5.1.0~ynh1
-
 
 **Démo :** <https://demo.2fauth.app/login>
 
