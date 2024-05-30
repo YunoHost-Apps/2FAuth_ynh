@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 2FAuth
+# YunoHost 上的 2FAuth
 
 [![集成程度](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![工作状态](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
 
@@ -27,7 +27,7 @@
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**分发版本：** 5.1.1~ynh2
+**分发版本：** 5.2.0~ynh1
 
 **演示：** <https://demo.2fauth.app/login>
 

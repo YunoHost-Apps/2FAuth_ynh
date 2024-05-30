@@ -5,7 +5,7 @@ name = "2FAuth"
 description.en = "self-hosted alternative to One Time Passcode"
 description.fr = "Alternative auto-hébergée a One Time Passcode"
 
-version = "5.1.1~ynh2"
+version = "5.2.0~ynh1"
 
 maintainers = []
 
@@ -44,8 +44,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/Bubka/2FAuth/archive/refs/tags/v5.1.1.tar.gz"
-        sha256 = "2e745b8770ae0bf38ae62a6d42f9f01d417cc36f03a02672b686bc7d155719e1"
+        url = "https://github.com/Bubka/2FAuth/archive/refs/tags/v5.2.0.tar.gz"
+        sha256 = "38a105218f0a1a632b407179db7c9793521021b90561f5a5da405d272315a1c5"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
