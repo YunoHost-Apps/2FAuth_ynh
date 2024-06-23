@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
@@ -21,12 +15,12 @@ email=$(ynh_user_get_info --username=$admin --key=mail)
 
 # key for the .env __KEY__
 key=$(ynh_string_random --length=45 | base64)
-ynh_app_setting_set --app=$app --key=key --value=$key
+ynh_app_setting_set --key=key --value=$key
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=1
+ynh_script_progression "Setting up source files..."
 
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
@@ -37,26 +31,27 @@ chown -R $app:www-data "$install_dir"
 #=================================================
 # PHP-FPM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Configuring PHP-FPM..." --weight=2
+ynh_script_progression "Configuring PHP-FPM..."
 
-ynh_add_fpm_config
+ynh_config_add_phpfpm
 
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 #=================================================
 # INSTALL 2FAUTH WITH COMPOSER
 #=================================================
-ynh_script_progression --message="Installing $app with Composer..." --weight=15
+ynh_script_progression "Installing $app with Composer..."
 
-ynh_install_composer --install_args="--prefer-dist --no-scripts --no-dev"
+ynh_composer_install
+ynh_composer_exec install --no-dev  --prefer-dist --no-scripts --no-dev
 
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+ynh_script_progression "Adding $app's configuration..."
 
 # Setup application config
-ynh_add_config --template=".env" --destination="$install_dir/.env"
+ynh_config_add --template=".env" --destination="$install_dir/.env"
 
 chmod 640 "$install_dir/.env"
 chown $app:$app "$install_dir/.env"
@@ -64,14 +59,14 @@ chown $app:$app "$install_dir/.env"
 #=================================================
 # BUILDING
 #=================================================
-ynh_script_progression --message="Building $app..." --weight=10
+ynh_script_progression "Building $app..."
 
 # Setup application config
 pushd $install_dir
-	php$phpversion artisan migrate:refresh -n
-	php$phpversion artisan passport:install -n
-	php$phpversion artisan storage:link -n
-	php$phpversion artisan config:cache -n
+	php$php_version artisan migrate:refresh -n
+	php$php_version artisan passport:install -n
+	php$php_version artisan storage:link -n
+	php$php_version artisan config:cache -n
 popd
 
 chmod 775 "$install_dir"
@@ -82,4 +77,4 @@ chown -R $app:www-data "$install_dir"
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression "Installation of $app completed"
