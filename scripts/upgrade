@@ -1,83 +1,78 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
-ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+ynh_script_progression "Ensuring downward compatibility..."
 
+# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=key --value=$(ynh_string_random --length=45 | base64)
 if [ -z "${key:-}" ]; then
 	key=$(ynh_string_random --length=45 | base64)
-	ynh_app_setting_set --app=$app --key=key --value=$key
+	ynh_app_setting_set --key=key --value=$key
 fi
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Upgrading source files..." --weight=3
+ynh_script_progression "Upgrading source files..."
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir" --full_replace=1 --keep="public/storage storage .env"
+ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="public/storage storage .env"
 
-chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
-
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # PHP-FPM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=1
+ynh_script_progression "Upgrading PHP-FPM configuration..."
 
-ynh_add_fpm_config
+ynh_config_add_phpfpm
 
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Upgrading a configuration file..." --weight=1
+ynh_script_progression "Upgrading a configuration file..."
 
 # Setup application config
-ynh_add_config --template=".env" --destination="$install_dir/.env"
+ynh_config_add --template=".env" --destination="$install_dir/.env"
 
-chmod 640 "$install_dir/.env"
-chown $app:$app "$install_dir/.env"
+#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 640 "$install_dir/.env"
+#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app:$app "$install_dir/.env"
 
 #=================================================
 # INSTALL 2FAUTH WITH COMPOSER
 #=================================================
-ynh_script_progression --message="Installing $app with Composer..." --weight=15
+ynh_script_progression "Installing $app with Composer..."
 
-ynh_secure_remove --file=$install_dir/package-lock.json
+ynh_safe_rm $install_dir/package-lock.json
 
-ynh_install_composer --install_args="--ignore-platform-reqs --prefer-dist --no-scripts --no-dev"
+ynh_composer_install
+ynh_composer_exec install --no-dev  --ignore-platform-reqs --prefer-dist --no-scripts --no-dev
 
 #=================================================
 # BUILDING
 #=================================================
-ynh_script_progression --message="Building..." --weight=10
+ynh_script_progression "Building..."
 
-ynh_exec_warn_less ynh_composer_exec --commands="update"
+ynh_composer_exec update
 
 # Setup application config
 pushd $install_dir
-	php$phpversion artisan cache:clear
-	php$phpversion artisan config:clear
-	php$phpversion artisan migrate -n
-	php$phpversion artisan passport:install -n
-	php$phpversion artisan config:cache -n
-	php$phpversion artisan route:cache
+	php$php_version artisan cache:clear
+	php$php_version artisan config:clear
+	php$php_version artisan migrate -n
+	php$php_version artisan passport:install -n
+	php$php_version artisan config:cache -n
+	php$php_version artisan route:cache
 popd
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression "Upgrade of $app completed"
