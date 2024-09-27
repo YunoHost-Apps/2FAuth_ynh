@@ -5,7 +5,7 @@
 
 # YunoHost 上的 2FAuth
 
-[![集成程度](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![工作状态](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/2fauth.svg)](https://ci-apps.yunohost.org/ci/apps/2fauth/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
 
 [![使用 YunoHost 安装 2FAuth](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 

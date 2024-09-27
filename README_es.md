@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # 2FAuth para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/2fauth.svg)](https://ci-apps.yunohost.org/ci/apps/2fauth/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
 
 [![Instalar 2FAuth con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 
@@ -44,7 +44,7 @@ No se debe editar a mano.
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # 2FAuth YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/2fauth.svg)](https://ci-apps.yunohost.org/ci/apps/2fauth/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
 
 [![Instalatu 2FAuth YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 

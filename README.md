@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # 2FAuth for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![Working status](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
+[![Integration level](https://dash.yunohost.org/integration/2fauth.svg)](https://ci-apps.yunohost.org/ci/apps/2fauth/) ![Working status](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
 
 [![Install 2FAuth with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 
