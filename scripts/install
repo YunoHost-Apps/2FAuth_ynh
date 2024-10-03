@@ -62,10 +62,6 @@ pushd $install_dir
 	php$php_version artisan config:cache -n
 popd
 
-chmod 775 "$install_dir"
-chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
-
 #=================================================
 # END OF SCRIPT
 #=================================================
