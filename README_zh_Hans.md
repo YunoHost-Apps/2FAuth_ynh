@@ -27,7 +27,7 @@
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**分发版本：** 5.3.0~ynh1
+**分发版本：** 5.3.1~ynh1
 
 **演示：** <https://demo.2fauth.app/login>
 
