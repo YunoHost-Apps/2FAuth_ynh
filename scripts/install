@@ -14,7 +14,7 @@ email=$(ynh_user_get_info --username=$admin --key=mail)
 #=================================================
 
 # key for the .env __KEY__
-key=$(ynh_string_random --length=45 | base64)
+key=$(ynh_string_random --length=32 | base64)
 ynh_app_setting_set --key=key --value=$key
 
 #=================================================
@@ -39,7 +39,7 @@ ynh_config_add_nginx
 ynh_script_progression "Installing $app with Composer..."
 
 ynh_composer_install
-ynh_composer_exec install --no-dev  --prefer-dist --no-scripts --no-dev
+ynh_composer_exec install --no-dev --prefer-dist --no-scripts --no-dev
 
 #=================================================
 # ADD A CONFIGURATION
@@ -57,6 +57,7 @@ ynh_script_progression "Building $app..."
 
 pushd $install_dir
 	php$php_version artisan migrate:refresh -n
+	php$php_version artisan key:generate
 	php$php_version artisan passport:install -n
 	php$php_version artisan storage:link -n
 	php$php_version artisan config:cache -n

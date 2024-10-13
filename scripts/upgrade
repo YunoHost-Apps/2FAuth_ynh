@@ -8,7 +8,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Ensuring downward compatibility..."
 
-ynh_app_setting_set_default --key=key --value=$(ynh_string_random --length=45 | base64)
+ynh_app_setting_set_default --key=key --value=$(ynh_string_random --length=32 | base64)
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -29,11 +29,11 @@ ynh_config_add_nginx
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression "Upgrading a configuration file..."
+#ynh_script_progression "Upgrading a configuration file..."
 
-ynh_config_add --template=".env" --destination="$install_dir/.env"
+#ynh_config_add --template=".env" --destination="$install_dir/.env"
 
-chmod 640 "$install_dir/.env"
+#chmod 640 "$install_dir/.env"
 
 #=================================================
 # INSTALL 2FAUTH WITH COMPOSER
@@ -56,6 +56,7 @@ pushd $install_dir
 	php$php_version artisan cache:clear
 	php$php_version artisan config:clear
 	php$php_version artisan migrate -n
+	php$php_version artisan key:generate
 	php$php_version artisan passport:install -n
 	php$php_version artisan config:cache -n
 	php$php_version artisan route:cache
