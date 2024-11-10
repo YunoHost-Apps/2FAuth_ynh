@@ -27,7 +27,7 @@ No se debe editar a mano.
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**Versión actual:** 5.3.1~ynh1
+**Versión actual:** 5.4.0~ynh1
 
 **Demo:** <https://demo.2fauth.app/login>
 
