@@ -27,7 +27,7 @@ Il NE doit PAS être modifié à la main.
 - Modifier les comptes, même ceux importés
 - Générer des codes de sécurité TOTP et HOTP
 
-**Version incluse :** 5.3.1~ynh1
+**Version incluse :** 5.4.1~ynh1
 
 **Démo :** <https://demo.2fauth.app/login>
 
