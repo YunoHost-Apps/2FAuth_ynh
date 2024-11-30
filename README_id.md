@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # 2FAuth untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/2fauth.svg)](https://ci-apps.yunohost.org/ci/apps/2fauth/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/2fauth)](https://ci-apps.yunohost.org/ci/apps/2fauth/)
+![Status kerja](https://apps.yunohost.org/badge/state/2fauth)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/2fauth)
 
 [![Pasang 2FAuth dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 
@@ -27,7 +29,7 @@ Ini TIDAK boleh diedit dengan tangan.
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**Versi terkirim:** 5.3.1~ynh1
+**Versi terkirim:** 5.4.3~ynh1
 
 **Demo:** <https://demo.2fauth.app/login>
 
