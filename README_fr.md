@@ -5,7 +5,9 @@ Il NE doit PAS être modifié à la main.
 
 # 2FAuth pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
+[![Niveau d’intégration](https://apps.yunohost.org/badge/integration/2fauth)](https://ci-apps.yunohost.org/ci/apps/2fauth/)
+![Statut du fonctionnement](https://apps.yunohost.org/badge/state/2fauth)
+![Statut de maintenance](https://apps.yunohost.org/badge/maintained/2fauth)
 
 [![Installer 2FAuth avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 
@@ -27,7 +29,7 @@ Il NE doit PAS être modifié à la main.
 - Modifier les comptes, même ceux importés
 - Générer des codes de sécurité TOTP et HOTP
 
-**Version incluse :** 5.2.0~ynh2
+**Version incluse :** 5.4.3~ynh1
 
 **Démo :** <https://demo.2fauth.app/login>
 

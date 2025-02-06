@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # 2FAuth YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/2fauth.svg)](https://dash.yunohost.org/appci/app/2fauth) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/2fauth.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/2fauth.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/2fauth)](https://ci-apps.yunohost.org/ci/apps/2fauth/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/2fauth)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/2fauth)
 
 [![Instalatu 2FAuth YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=2fauth)
 
@@ -27,7 +29,7 @@ EZ editatu eskuz.
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
-**Paketatutako bertsioa:** 5.2.0~ynh2
+**Paketatutako bertsioa:** 5.4.3~ynh1
 
 **Demoa:** <https://demo.2fauth.app/login>
 

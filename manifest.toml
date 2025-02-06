@@ -5,7 +5,7 @@ name = "2FAuth"
 description.en = "self-hosted alternative to One Time Passcode"
 description.fr = "Alternative auto-hébergée a One Time Passcode"
 
-version = "5.2.0~ynh2"
+version = "5.4.3~ynh1"
 
 maintainers = []
 
@@ -16,12 +16,12 @@ admindoc = "https://docs.2fauth.app/"
 code = "https://github.com/Bubka/2FAuth"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 11.2.30"
+helpers_version = "2.1"
 architectures = "all"
-multi_instance = true
+multi_instance = false
 
 ldap = false
-
 sso = true
 
 disk = "50M"
@@ -44,14 +44,15 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/Bubka/2FAuth/archive/refs/tags/v5.2.0.tar.gz"
-        sha256 = "38a105218f0a1a632b407179db7c9793521021b90561f5a5da405d272315a1c5"
+        url = "https://github.com/Bubka/2FAuth/archive/refs/tags/v5.4.3.tar.gz"
+        sha256 = "9b4fd8307c69b176c92686877584eb43ef3aa8e9c9e5860802c696a9531aace7"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
     allow_email = true
 
     [resources.install_dir]
+    group = "www-data:r-x"
 
     [resources.permissions]
     main.url = "/"
@@ -61,7 +62,7 @@ ram.runtime = "50M"
     api.auth_header = false
 
     [resources.apt]
-    packages = "mariadb-server, php8.3-bcmath, php8.3-xml, php8.3-mbstring, php8.3-gd, php8.3-mysql, php8.3-curl"
+    packages = "mariadb-server, redis-server, php8.2-bcmath, php8.2-xml, php8.2-mbstring, php8.2-gd, php8.2-mysql, php8.2-curl"
 
     [resources.database]
     type = "mysql"
