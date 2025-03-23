@@ -1,17 +1,17 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# RETRIEVE ARGUMENTS FROM THE MANIFEST
+# INITIALIZE AND STORE SETTINGS
 #=================================================
 
 email=$(ynh_user_get_info --username=$admin --key=mail)
-
-#=================================================
-# STORE SETTINGS FROM MANIFEST
-#=================================================
 
 # key for the .env __KEY__
 #key=$(ynh_string_random --length=32 | base64)
@@ -22,15 +22,27 @@ email=$(ynh_user_get_info --username=$admin --key=mail)
 #=================================================
 ynh_script_progression "Setting up source files..."
 
+# Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
-# PHP-FPM CONFIGURATION
+# APP INITIAL CONFIGURATION
 #=================================================
-ynh_script_progression "Configuring PHP-FPM..."
+ynh_script_progression "Adding $app's configuration files..."
 
+ynh_config_add --template=".env" --destination="$install_dir/.env"
+
+chmod 640 "$install_dir/.env"
+
+#=================================================
+# SYSTEM CONFIGURATION
+#=================================================
+ynh_script_progression "Adding system configurations related to $app..."
+
+# Create a PHP-FPM config (with conf/extra_php-fpm.conf being appended to it)
 ynh_config_add_phpfpm
 
+# Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 
 #=================================================
@@ -40,15 +52,6 @@ ynh_script_progression "Installing $app with Composer..."
 
 ynh_composer_install
 ynh_composer_exec install --prefer-dist --no-scripts --no-dev
-
-#=================================================
-# ADD A CONFIGURATION
-#=================================================
-ynh_script_progression "Adding $app's configuration..."
-
-ynh_config_add --template=".env" --destination="$install_dir/.env"
-
-chmod 640 "$install_dir/.env"
 
 #=================================================
 # BUILDING
