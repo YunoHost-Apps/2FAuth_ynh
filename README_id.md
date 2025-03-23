@@ -29,6 +29,7 @@ Ini TIDAK boleh diedit dengan tangan.
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
+
 **Versi terkirim:** 5.4.3~ynh1
 
 **Demo:** <https://demo.2fauth.app/login>
