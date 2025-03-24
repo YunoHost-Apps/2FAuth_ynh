@@ -29,6 +29,7 @@
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
+
 **Поставляемая версия:** 5.4.3~ynh1
 
 **Демо-версия:** <https://demo.2fauth.app/login>

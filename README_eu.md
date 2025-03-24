@@ -29,6 +29,7 @@ EZ editatu eskuz.
 - Edit accounts, even the imported ones
 - Generate TOTP and HOTP security codes
 
+
 **Paketatutako bertsioa:** 5.4.3~ynh1
 
 **Demoa:** <https://demo.2fauth.app/login>
