@@ -30,7 +30,7 @@ NON debe editarse manualmente.
 - Generate TOTP and HOTP security codes
 
 
-**Versión proporcionada:** 5.4.3~ynh1
+**Versión proporcionada:** 5.5.0~ynh1
 
 **Demo:** <https://demo.2fauth.app/login>
 

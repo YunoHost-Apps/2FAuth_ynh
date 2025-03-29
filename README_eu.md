@@ -30,7 +30,7 @@ EZ editatu eskuz.
 - Generate TOTP and HOTP security codes
 
 
-**Paketatutako bertsioa:** 5.4.3~ynh1
+**Paketatutako bertsioa:** 5.5.0~ynh1
 
 **Demoa:** <https://demo.2fauth.app/login>
 
@@ -49,7 +49,7 @@ EZ editatu eskuz.
 
 Bidali `pull request`a [`testing` abarrera](https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing).
 
-`testing` abarra probatzeko, ondorengoa egin:
+`testing` abarra probatzeko, honakoa egin:
 
 ```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/2fauth_ynh/tree/testing --debug

@@ -3,7 +3,7 @@ Este archivo README esta generado automaticamente<https://github.com/YunoHost/ap
 No se debe editar a mano.
 -->
 
-# 2FAuth para Yunohost
+# 2FAuth para YunoHost
 
 [![Nivel de integración](https://apps.yunohost.org/badge/integration/2fauth)](https://ci-apps.yunohost.org/ci/apps/2fauth/)
 ![Estado funcional](https://apps.yunohost.org/badge/state/2fauth)
@@ -30,7 +30,7 @@ No se debe editar a mano.
 - Generate TOTP and HOTP security codes
 
 
-**Versión actual:** 5.4.3~ynh1
+**Versión actual:** 5.5.0~ynh1
 
 **Demo:** <https://demo.2fauth.app/login>
 
