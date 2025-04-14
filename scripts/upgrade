@@ -1,39 +1,37 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
-
-#=================================================
-# ENSURE DOWNWARD COMPATIBILITY
-#=================================================
-ynh_script_progression "Ensuring downward compatibility..."
-
-ynh_app_setting_set_default --key=key --value=$(ynh_string_random --length=32 | base64)
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
+# Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="public/storage storage .env"
 
 #=================================================
-# PHP-FPM CONFIGURATION
+# UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression "Upgrading PHP-FPM configuration..."
-
-ynh_config_add_phpfpm
-
-ynh_config_add_nginx
-
-#=================================================
-# ADD A CONFIGURATION
-#=================================================
-#ynh_script_progression "Upgrading a configuration file..."
+#ynh_script_progression "Updating $app's configuration files..."
 
 #ynh_config_add --template=".env" --destination="$install_dir/.env"
 
 #chmod 640 "$install_dir/.env"
+
+#=================================================
+# REAPPLY SYSTEM CONFIGURATION
+#=================================================
+ynh_script_progression "Upgrading system configurations related to $app..."
+
+ynh_config_add_phpfpm
+
+ynh_config_add_nginx
 
 #=================================================
 # INSTALL 2FAUTH WITH COMPOSER
@@ -43,7 +41,7 @@ ynh_script_progression "Installing $app with Composer..."
 ynh_safe_rm $install_dir/package-lock.json
 
 ynh_composer_install
-ynh_composer_exec install --no-dev --ignore-platform-reqs --prefer-dist --no-scripts --no-dev
+ynh_composer_exec install --prefer-dist --no-scripts --no-dev
 
 #=================================================
 # BUILDING
@@ -56,7 +54,7 @@ pushd $install_dir
 	php$php_version artisan cache:clear
 	php$php_version artisan config:clear
 	php$php_version artisan migrate -n
-	php$php_version artisan key:generate
+	#php$php_version artisan key:generate
 	php$php_version artisan passport:install -n
 	php$php_version artisan config:cache -n
 	php$php_version artisan route:cache
