@@ -34,6 +34,13 @@ ram.runtime = "50M"
     [install.domain]
     type = "domain"
 
+    [install.path]
+    type = "path"
+    default = "/2fauth"
+
+    [install.admin]
+    type = "user"
+
     [install.init_main_permission]
     type = "group"
     default = "visitors"
