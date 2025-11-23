@@ -64,10 +64,10 @@ ram.runtime = "50M"
     api.auth_header = false
 
     [resources.apt]
-    packages = "mariadb-server, redis-server, php8.3-bcmath, php8.3-xml, php8.3-mbstring, php8.3-gd, php8.3-mysql, php8.3-curl"
+    packages = "mariadb-server, redis-server, php8.4-bcmath, php8.4-xml, php8.4-mbstring, php8.4-gd, php8.4-mysql, php8.4-curl"
 
     [resources.database]
     type = "mysql"
 
     [resources.composer]
-    version = "2.7.7"
+    version = "2.9.2"
