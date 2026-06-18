@@ -8,7 +8,7 @@ It shall NOT be edited by hand.
   2FAuth, packaged for YunoHost
 </h1>
 
-self-hosted alternative to One Time Passcode
+Generate and organize your two-factor authentication codes
 
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://demo.2fauth.app/login)
 [![Version: 7.0.1~ynh1](https://img.shields.io/badge/Version-7.0.1~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/2fauth/)
