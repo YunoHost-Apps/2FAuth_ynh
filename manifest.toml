@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "2fauth"
 name = "2FAuth"
-description.en = "self-hosted alternative to One Time Passcode"
-description.fr = "Alternative auto-hébergée a One Time Passcode"
+description.en = "Generate and organize your two-factor authentication codes"
+description.fr = "Générez et organisez vos codes d'authentification à deux facteurs"
 
 version = "7.0.1~ynh1"
 
