@@ -4,10 +4,10 @@ packaging_format = 2
 
 id = "2fauth"
 name = "2FAuth"
-description.en = "self-hosted alternative to One Time Passcode"
-description.fr = "Alternative auto-hébergée a One Time Passcode"
+description.en = "Generate and organize your two-factor authentication codes"
+description.fr = "Générez et organisez vos codes d'authentification à deux facteurs"
 
-version = "7.0.1~ynh1"
+version = "7.0.1~ynh2"
 
 maintainers = []
 
@@ -18,7 +18,7 @@ admindoc = "https://docs.2fauth.app/"
 code = "https://github.com/Bubka/2FAuth"
 
 [integration]
-yunohost = ">= 12.1.38"
+yunohost = ">= 12.1.39"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
@@ -64,10 +64,10 @@ ram.runtime = "50M"
     api.auth_header = false
 
     [resources.apt]
-    packages = "mariadb-server, redis-server, php8.4-bcmath, php8.4-xml, php8.4-mbstring, php8.4-gd, php8.4-mysql, php8.4-curl"
+    packages = "mariadb-server, redis-server, php8.5-bcmath, php8.5-xml, php8.5-mbstring, php8.5-gd, php8.5-mysql, php8.5-curl"
 
     [resources.database]
     type = "mysql"
 
     [resources.composer]
-    version = "2.9.5"
+    version = "2.10.1"
