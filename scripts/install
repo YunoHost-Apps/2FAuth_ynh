@@ -62,6 +62,7 @@ pushd $install_dir
 	php$php_version artisan passport:install -n
 	php$php_version artisan storage:link -n
 	php$php_version artisan config:cache -n
+	php$php_version artisan storage:link
 popd
 
 ynh_delete_file_checksum "$install_dir/.env"
