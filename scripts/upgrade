@@ -51,6 +51,8 @@ ynh_composer_exec update
 pushd $install_dir
 	php$php_version artisan cache:clear
 	php$php_version artisan config:clear
+	php$php_version artisan view:clear
+	php$php_version artisan route:clear
 	php$php_version artisan migrate -n
 	#php$php_version artisan key:generate
 	php$php_version artisan passport:install -n
