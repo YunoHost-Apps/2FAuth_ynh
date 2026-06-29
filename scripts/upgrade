@@ -58,6 +58,9 @@ pushd $install_dir
 	php$php_version artisan passport:install -n
 	php$php_version artisan config:cache -n
 	php$php_version artisan route:cache
+	# Check if the symlink exusts and the destination also, if one of them doesn't > create link
+	# This fixes icons not showing
+	[ -L public/storage ] && [ -e public/storage ] || php artisan storage:link
 popd
 
 #=================================================
