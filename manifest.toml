@@ -7,7 +7,7 @@ name = "2FAuth"
 description.en = "Generate and organize your two-factor authentication codes"
 description.fr = "Générez et organisez vos codes d'authentification à deux facteurs"
 
-version = "7.0.1~ynh3"
+version = "7.0.1~ynh4"
 
 maintainers = []
 
