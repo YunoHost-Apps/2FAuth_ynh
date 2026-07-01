@@ -60,7 +60,7 @@ pushd $install_dir
 	php$php_version artisan route:cache
 	# Check if the symlink exusts and the destination also, if one of them doesn't > create link
 	# This fixes icons not showing
-	[ -L public/storage ] && [ -e public/storage ] || php artisan storage:link
+	[ -L public/storage ] && [ -e public/storage ] || php$php_version artisan storage:link
 popd
 
 #=================================================
