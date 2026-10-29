@@ -7,7 +7,7 @@ name = "2FAuth"
 description.en = "Generate and organize your two-factor authentication codes"
 description.fr = "Générez et organisez vos codes d'authentification à deux facteurs"
 
-version = "8.0.2~ynh1"
+version = "9.0.0~ynh1"
 
 maintainers = []
 
@@ -46,8 +46,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/Bubka/2FAuth/archive/refs/tags/v8.0.2.tar.gz"
-    sha256 = "579077adb3c3d021adc9c067e3ebc8b84454a9123eac342748f75da1f7e95ed7"
+    url = "https://github.com/Bubka/2FAuth/archive/refs/tags/v9.0.0.tar.gz"
+    sha256 = "25c1cdd02c1beaccaaa180a671e9ad906dd88a4cd4da235328e9c0eb41c81dd5"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
