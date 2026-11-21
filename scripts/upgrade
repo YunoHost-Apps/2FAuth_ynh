@@ -6,7 +6,7 @@
 
 source /usr/share/yunohost/helpers
 
-path_no_slash=${path%/}
+path_no_slash=${path#/}
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
