@@ -12,6 +12,7 @@ source /usr/share/yunohost/helpers
 
 email=$(ynh_user_get_info --username=$admin --key=mail)
 path_no_slash=${path#/}
+app_key=123
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
