@@ -13,9 +13,6 @@ source /usr/share/yunohost/helpers
 email=$(ynh_user_get_info --username=$admin --key=mail)
 path_no_slash=${path#/}
 
-app_key=$(php$php_version "$install_dir/artisan" key:generate --show)
-ynh_app_setting_set --key=app_key --value=$app_key
-
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
@@ -23,6 +20,9 @@ ynh_script_progression "Setting up source files..."
 
 # Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
+
+app_key=$(php$php_version "$install_dir/artisan" key:generate --show)
+ynh_app_setting_set --key=app_key --value=$app_key
 
 #=================================================
 # APP INITIAL CONFIGURATION
