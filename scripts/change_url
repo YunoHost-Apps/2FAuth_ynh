@@ -21,11 +21,13 @@ ynh_config_change_url_nginx
 
 domain=$new_domain
 path_no_slash=${new_path#/}
+old_path_no_slash=${path#/}
 
 ynh_backup_if_checksum_is_different "$install_dir/.env"
 ynh_delete_file_checksum "$install_dir/.env"
 
 ynh_replace --match="${old_domain}" --replace="${new_domain}" --file="$install_dir/.env"
+ynh_replace --match="${old_path_no_slash}" --replace="${path_no_slash}" --file="$install_dir/.env"
 
 ynh_store_file_checksum "$install_dir/.env"
 
