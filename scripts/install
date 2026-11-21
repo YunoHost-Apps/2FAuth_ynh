@@ -13,7 +13,9 @@ source /usr/share/yunohost/helpers
 email=$(ynh_user_get_info --username=$admin --key=mail)
 path_no_slash=${path#/}
 
-app_key=$(php artisan key:generate --show)
+pushd $install_dir
+app_key=$(php$php_version artisan key:generate --show)
+popd
 ynh_app_setting_set --key=app_key --value=$app_key
 
 #=================================================
