@@ -22,7 +22,7 @@ ynh_script_progression "Setting up source files..."
 ynh_setup_source --dest_dir="$install_dir"
 
 pushd $install_dir
-	app_key=$(php$php_version "$install_dir/artisan" key:generate --show)
+	app_key=$(php$php_version artisan key:generate --show)
 	ynh_app_setting_set --key=app_key --value=$app_key
 popd
 #=================================================
