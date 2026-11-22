@@ -59,7 +59,7 @@ pushd $install_dir
 	ynh_app_setting_set --key=app_key --value=$app_key
 	php$php_version artisan passport:install -n
 	php$php_version artisan storage:link -n
-	php$php_version artisan config:cache -n
+	php$php_version artisan config:clear -n
 	php$php_version artisan storage:link
 popd
 
