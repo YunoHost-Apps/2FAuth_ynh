@@ -75,6 +75,8 @@ pushd $install_dir
 	[ -L public/storage ] && [ -e public/storage ] || php$php_version artisan storage:link
 popd
 
+chown -R "$app:www-data" "$install_dir"
+
 #=================================================
 # END OF SCRIPT
 #=================================================
