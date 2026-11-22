@@ -68,6 +68,8 @@ ynh_script_progression "Updating $app's configuration files..."
 ynh_config_add --template=".env" --destination="$install_dir/.env"
 chmod 640 "$install_dir/.env"
 
+chown -R "$app:www-data" "$install_dir"
+
 #=================================================
 # END OF SCRIPT
 #=================================================
