@@ -18,13 +18,23 @@ ynh_config_change_url_nginx
 # SPECIFIC MODIFICATIONS
 #=================================================
 
-ynh_backup_if_checksum_is_different "$install_dir/.env"
-ynh_delete_file_checksum "$install_dir/.env"
+domain=$new_domain
+path_no_slash=${new_path#/}
+app_key=$(ynh_app_setting_get --key=app_key)
 
-ynh_replace --match="${old_domain}" --replace="${new_domain}" --file="$install_dir/.env"
+#old_path_no_slash=${path#/}
 
-ynh_store_file_checksum "$install_dir/.env"
+#ynh_backup_if_checksum_is_different "$install_dir/.env"
+#ynh_delete_file_checksum "$install_dir/.env"
 
+#ynh_replace --match="${old_domain}" --replace="${new_domain}" --file="$install_dir/.env"
+#ynh_replace --match="${old_path_no_slash}" --replace="${path_no_slash}" --file="$install_dir/.env"
+
+#ynh_store_file_checksum "$install_dir/.env"
+
+ynh_config_add --template=".env" --destination="$install_dir/.env"
+
+chmod 640 "$install_dir/.env"
 pushd $install_dir
 	php$php_version artisan cache:clear
 	php$php_version artisan config:clear

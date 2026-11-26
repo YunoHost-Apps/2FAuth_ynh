@@ -7,7 +7,7 @@ name = "2FAuth"
 description.en = "Generate and organize your two-factor authentication codes"
 description.fr = "Générez et organisez vos codes d'authentification à deux facteurs"
 
-version = "9.0.2~ynh1"
+version = "9.0.3~ynh1"
 
 maintainers = []
 
@@ -21,7 +21,7 @@ code = "https://github.com/Bubka/2FAuth"
 yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = "all"
-multi_instance = false
+multi_instance = true
 
 ldap = false
 sso = true
@@ -33,6 +33,10 @@ ram.runtime = "50M"
 [install]
     [install.domain]
     type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/2fauth"
 
     [install.init_main_permission]
     type = "group"
@@ -46,8 +50,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/Bubka/2FAuth/archive/refs/tags/v9.0.2.tar.gz"
-    sha256 = "6b1bff4d27ee7b138aae983c292e38a71ac2118f1addc11a640c52a3b44df06f"
+    url = "https://github.com/Bubka/2FAuth/archive/refs/tags/v9.0.3.tar.gz"
+    sha256 = "ba816fdb41df1fa67fa9c0312d19d2520b8c03459527c4db1e650a77252b87e3"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]

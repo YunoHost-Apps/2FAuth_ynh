@@ -6,6 +6,8 @@
 
 source /usr/share/yunohost/helpers
 
+path_no_slash=${path#/}
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
@@ -17,11 +19,22 @@ ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="public/storage
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-#ynh_script_progression "Updating $app's configuration files..."
+ynh_script_progression "Updating $app's configuration files..."
 
-#ynh_config_add --template=".env" --destination="$install_dir/.env"
+# Check for app_key, create it if doesn't exist, then save as a setting (I think we had at some point app_key in .env empty in old installs)
+pushd $install_dir
+	if [ -z "${app_key:-}" ]; then
+	    app_key=$(grep -E '^APP_KEY=' "$install_dir/.env" | cut -d '=' -f2- | tr -d "\"'\r")
+	    if [ -z "$app_key" ]; then
+	        app_key=$(ynh_exec_as_app php$php_version artisan key:generate --show)
+	    fi
+	    ynh_app_setting_set --key=app_key --value="$app_key"
+	fi
+popd
 
-#chmod 640 "$install_dir/.env"
+# .env file has been updated upstream, this must be reflected in the package
+ynh_config_add --template=".env" --destination="$install_dir/.env"
+chmod 640 "$install_dir/.env"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION
@@ -54,7 +67,6 @@ pushd $install_dir
 	php$php_version artisan view:clear
 	php$php_version artisan route:clear
 	php$php_version artisan migrate -n
-	#php$php_version artisan key:generate
 	php$php_version artisan passport:install -n
 	php$php_version artisan config:cache -n
 	php$php_version artisan route:cache
@@ -62,6 +74,8 @@ pushd $install_dir
 	# This fixes icons not showing
 	[ -L public/storage ] && [ -e public/storage ] || php$php_version artisan storage:link
 popd
+
+chown -R "$app:www-data" "$install_dir"
 
 #=================================================
 # END OF SCRIPT
